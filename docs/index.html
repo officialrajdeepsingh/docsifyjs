@@ -11,13 +11,28 @@
     />
     <link
       rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
+      href="https://cdn.jsdelivr.net/gh/sushantrahate/docsify-darkly-theme/css/darkly.min.css"
     />
   </head>
   <body>
     <div id="app">Please wait...</div>
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="//unpkg.com/docsify-share/build/index.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
+
+    <!-- Docsify v4 -->
     <script>
       window.$docsify = {
+        share: {
+          theme: "slide-bar",
+          reddit: true,
+          linkedin: true,
+          facebook: true,
+          twitter: true,
+          whatsapp: true,
+          telegram: true,
+        },
         search: "auto", // default
         loadSidebar: true,
         search: [
@@ -32,7 +47,5 @@
         repo: "officialrajdeepsingh/docsifyjs",
       };
     </script>
-    <!-- Docsify v4 -->
-    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   </body>
 </html>
