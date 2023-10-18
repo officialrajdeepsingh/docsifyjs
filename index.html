@@ -51,7 +51,30 @@
         themeColor: "#3F51B5",
         name: "Document",
         repo: "officialrajdeepsingh/docsifyjs",
+        plugins: [
+          function editButton(hook, vm) {
+            // The date template pattern
+            $docsify.formatUpdated = "{YYYY}/{MM}/{DD} {HH}:{mm}";
+            hook.beforeEach(function (html) {
+              var url =
+                "https://github.com/officialrajdeepsingh/docsifyjs/blob/main" +
+                vm.route.file;
+
+              let tempFile = url.replace(
+                "awesome-nextjs/README.md",
+                "README.md",
+              )
+                ? url.replace("awesome-nextjs/README.md", "README.md")
+                : url;
+
+              var editHtml = "[📝 EDIT DOCUMENT](" + tempFile + ")\n";
+
+              return editHtml + html + "\n----\n" + "Last modified " + editHtml;
+            });
+          },
+        ],
       };
     </script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   </body>
 </html>
